@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+	<!-- defaultController is the default when no other controller is
+	     applicable. -->
+	<defaultRoute>index</defaultRoute>
+	<fileNotFoundController>
+		<controller>
+			<template>404.tpl</template>
+			<classname>Controllers_ErrorController</classname>
+		</controller>
+	</fileNotFoundController>
+	<routes>
+		<route>
+			<path>index</path>
+			<controller>
+				<template>index.tpl</template>
+				<classname>Controllers_IndexController</classname>
+			</controller>
+		</route>
+		<route>
+			<path>about</path>
+			<controller>
+				<template>about.tpl</template>
+				<classname>Controllers_AboutController</classname>
+			</controller>
+		</route>
+		<route>
+			<path>error</path>
+			<controller>
+				<template>404.tpl</template>
+				<classname>Controllers_ErrorController</classname>
+			</controller>
+		</route>
+	</routes>
+</config>
