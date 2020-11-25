@@ -43,6 +43,7 @@ class Controllers_ErrorController extends Controllers_Controller
 
     public function codeAction()
     {
+        global $app;
         $code = '500';
         $title = 'Unknown error';
         if (isset($this->_args['code']) && is_numeric($this->_args['code'])) {
@@ -58,7 +59,7 @@ class Controllers_ErrorController extends Controllers_Controller
             }
         }
         http_response_code($code);
-        $this->_template->assign('title', $title);
-        $this->_templateFile = $code.'.tpl';
+
+        $app->project->getTemplates($code);
     }
 }

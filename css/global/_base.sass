@@ -1,0 +1,55 @@
+*
+  box-sizing: border-box
+
+
+html
+  height: 100%
+body
+  position: relative
+  overflow-x: hidden
+  min-height: 100%
+
+body
+  font-family: $ff-main
+  font-size: 14px
+  line-height: 1.2
+
+  &.open-menu
+    overflow: hidden
+
+
+
+ul, ol
+  list-style-type: none
+  padding-left: 0
+
+
+a
+  text-decoration: none
+  &:hover,
+  &:focus,
+  &:active
+    transition: $base-transition
+
+
+input
+  &:focus, &:active
+    outline: none
+
+
+
+button
+  &:focus, &:active
+    outline: none
+
+
+
+.wrapper
+  overflow: hidden
+
+
+button
+  background-color: transparent
+  border: unset
+
+

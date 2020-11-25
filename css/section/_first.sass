@@ -1,0 +1,150 @@
+.container
+  max-width: 1170px
+  margin: 0 auto
+  padding: 0 15px
+  width: 100%
+  height: 100%
+//header
+.header
+  width: 100%
+  height: 80px
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0
+
+  &__inner
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__menu
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    flex-direction: column
+
+  &__menu-list
+    display: flex
+    align-items: center
+
+  &__menu-phone
+    margin-bottom: 20px
+
+  &__menu-call a
+    color: $c-dark
+    font: 400 16px/1 $ff-main
+    line-height: 18px
+    border-bottom: 2px solid transparent
+
+  &__menu-call a:hover
+    border-bottom: 2px solid $c-dark
+
+  &__menu-item:not(:last-child)
+    margin-right: 20px
+
+  &__menu-item a
+    color: $c-dark
+    font: 400 16px/1 $ff-main
+    line-height: 18px
+    transition: 0.4s
+    border-bottom: 2px solid transparent
+
+  &__menu-item a:hover
+    border-bottom: 2px solid $c-dark
+
+//main
+.main
+  width: 100%
+  height: 100%
+  margin-top: 115px
+
+  &__inner
+    margin-bottom: 20px
+
+  &__form
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0
+    border-radius: 10px
+    padding: 30px 50px
+    height: 541px
+
+  &__form-title
+    font: 700 40px/1 $ff-main
+    line-height: 45px
+    color: $c-dark
+    text-align: center
+    margin-bottom: 40px
+
+  &__form-select
+    width: 100%
+    padding: 15px
+    font: 400 16px/1 $ff-main
+    color: $c-dark
+    border-radius: 10px
+    border: 1px solid #eee
+    cursor: pointer
+
+  &__form-select option
+    cursor: pointer
+
+  &__form-checkbox
+    display: flex
+    align-items: center
+    margin: 20px 0
+    width: 125px
+    cursor: pointer
+
+  &__form-checkbox-name
+    font: 400 16px/1 $ff-main
+    color: $c-dark
+    margin-left: 10px
+    cursor: pointer
+
+  &__form-checkbox input[type="checkbox"]
+    transform: scale(1.2)
+    -ms-transform: scale(1.2)
+    -webkit-transform: scale(1.2)
+    cursor: pointer
+
+  &__form-input
+    width: 100%
+    border-radius: 10px
+    height: 198px
+    border: 1px solid #eee
+    resize: none
+    padding: 10px
+    font: 400 16px/1 $ff-main
+    color: $c-dark
+
+  &__form-submit
+    cursor: pointer
+    padding: 10px 30px
+    line-height: 1
+    position: relative
+    border: 1px solid #617959
+    background: #617959
+    color: #fff
+    font: 400 20px/1 $ff-main
+    text-align: center
+    transition: 200ms all
+    text-transform: unset
+    margin: 20px auto
+    display: block
+
+//footer
+.footer
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 96px
+  border-top: 1px solid #f7f8fa
+  padding: 40px 0
+  background: #f7f8fa
+
+  &__inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__inenr p
+    font: 400 16px/1 $ff-main
+    color: $c-dark

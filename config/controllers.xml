@@ -31,5 +31,19 @@
 				<classname>Controllers_ErrorController</classname>
 			</controller>
 		</route>
+		<route>
+			<path>result</path>
+			<controller>
+				<template>result.tpl</template>
+				<classname>Controllers_DataHandler</classname>
+			</controller>
+		</route>
+		<route>
+			<path>comments</path>
+			<controller>
+				<template>result.tpl</template>
+				<classname>Controllers_DataComments</classname>
+			</controller>
+		</route>
 	</routes>
 </config>

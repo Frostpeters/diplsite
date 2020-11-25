@@ -1,0 +1,57 @@
+.result
+  &__inner
+    display: block
+    margin-bottom: 50px
+
+  &__inner-title
+    font: 700 40px/1 "Roboto", sans-serif
+    line-height: 45px
+    color: #000
+    text-align: center
+    margin: 145px 0 40px
+
+  &__data
+    display: flex
+    justify-content: space-between
+
+  &__data-inner
+    box-shadow: rgba(99, 99, 99, 0.2) 0 1px 8px 0
+    border-radius: 10px
+    padding: 30px 50px
+    width: calc((100% - 20px) / 2)
+    margin-right: 20px
+
+  &__data-inner:last-child
+    margin-right: 0
+
+  &__data-title
+    font: 400 26px/1 $ff-main
+    margin-bottom: 20px
+
+  &__list
+    padding-left: 15px
+
+  &__list-item
+    padding: 20px 0
+    list-style: decimal
+    border-bottom: 1px dashed $c-dark
+
+  &__list-item:last-child
+    border: unset
+    padding-bottom: 0
+
+  &__list-item a
+    font: 400 16px/1 $ff-main
+    color: $c-dark
+  &__for, .result__site, .result__not-correct
+    font: 400 16px/1 $ff-main
+    margin-bottom: 10px
+    text-align: center
+  &__not-correct
+    margin-bottom: 30px!important
+
+.good
+  box-shadow: 0px 1px 8px 0px #078C1C
+
+.bad
+  box-shadow: 0px 1px 8px 0px #8C0D00

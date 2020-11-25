@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-{include file='head.tpl'}
-	<body>
-{include file='header.tpl'}
-		<h1>500/Internal Server Error</h1>
-		<p>Something went really wrong..</p>
-	</body>
-</html>
+<main class="main">
+	<div class="container">
+		<h1 class="main__form-title">500/Internal Server Error</h1>
+		<p class="main__form-title">Something went really wrong..</p>
+	</div>
+</main>

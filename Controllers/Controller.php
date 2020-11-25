@@ -1,5 +1,6 @@
 <?php
-
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', "On");
 /**
  * Contains Controller base class.
  *
@@ -79,9 +80,9 @@ class Controllers_Controller
      * Default constructor.
      *
      * @param Smarty $template Smarty template object
-     * @param array  $args     GET arguments
+     * @param array $args GET arguments
      */
-    public function __construct($action, $args, $template)
+    public function __construct($action = false, $args = false, $template = false)
     {
         $config = Models_ResourceManager::get('config');
         $this->_template = $template;
@@ -100,7 +101,7 @@ class Controllers_Controller
      */
     protected function process($action)
     {
-        $methodName = $action.'Action';
+        $methodName = $action . 'Action';
         $this->{$methodName}();
     }
 

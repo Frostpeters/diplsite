@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/helpers/project.class.php';
-class Controllers_IndexController extends Controllers_Controller
+class Controllers_DataHandler extends Controllers_Controller
 {
     /**
      * Performs page rendering logic.
@@ -8,6 +8,6 @@ class Controllers_IndexController extends Controllers_Controller
     protected function indexAction()
     {
         global $app;
-        $app->project->getTemplates('first_step');
+        $app->project->getTemplates('result');
     }
 }

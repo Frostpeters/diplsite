@@ -1,0 +1,3 @@
+config/db_local.php
+smarty/templates_c/*
+.idea/

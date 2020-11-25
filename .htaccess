@@ -1,0 +1,20 @@
+RewriteEngine On
+
+ErrorDocument 403 /error/code/code/403
+ErrorDocument 404 /error/code/code/404
+ErrorDocument 500 /error/code/code/500
+
+# Remove trailing slashes
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.+)/+$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+
+# Hide some stuff the visitors don't need to see (default directories
+# for parts of the framework)
+RewriteRule ^(smarty|Models|Controllers|config)(/.*)$ /index.php?controller=error&action=code&args=code/404 [L]
+
+# Redirect all requests for nonexistent files to dispatcher
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^/]+)(/*)([^/]*)(/*)(.*)$ /index.php?controller=$1&action=$3&args=$5 [L]
+#RewriteRule ^([^/]+)(/*)(.*)$ /index.php?controller=$1&args=$3 [L]
