@@ -10,6 +10,7 @@
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../../css/custom.css" type="text/css">
 
 </head>
 
@@ -18,28 +19,34 @@
     <div class="container">
         <div class="header__inner">
             <div class="header__logo">
-                <img src="../img/prime-logo.png" alt="">
+                {if $header_logo|default:false}
+                    <img src="../img/prime-logo.png" alt="">
+                {/if}
             </div>
             <div class="header__menu">
-                <ul class="header__menu-phone">
-                    <li class="header__menu-call">
-                        <a href="tel:+380000000000">+380000000000</a>
-                    </li>
-                </ul>
-                <ul class="header__menu-list">
-                    <li class="header__menu-item">
-                        <a href="#">test1</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#">test2</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#">test3</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#">test4</a>
-                    </li>
-                </ul>
+                {if $header_phone|default:false}
+                    <ul class="header__menu-phone">
+                        <li class="header__menu-call">
+                            <a href="tel:{$header_phone}">{$header_phone}</a>
+                        </li>
+                    </ul>
+                {/if}
+                {if $header_menu_list|default:false}
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="#">test1</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">test2</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">test3</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">test4</a>
+                        </li>
+                    </ul>
+                {/if}
             </div>
         </div>
     </div>
@@ -48,12 +55,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            <p>
-                made by Evgeniy Rak
-            </p>
-            <p>
-                CNUT 2020©
-            </p>
+            {$copyright|replace:"%DATE%":date('Y')}
         </div>
     </div>
 </footer>

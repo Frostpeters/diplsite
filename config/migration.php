@@ -5,10 +5,10 @@ pdo_query("CREATE TABLE IF NOT EXISTS `settings` (
   `data` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;");
 
-$data = pdo_query("select * from `settings` where `id` = 'cms_appdb_version' ");
+$data = pdo_query("select * from `settings` where `id` = 'db_version' ");
 
 if(empty($data[0])){
-    pdo_query("insert into `settings` (`id`, `data`) values ('cms_appdb_version', ?)", ['1.0']);
+    pdo_query("insert into `settings` (`id`, `data`) values ('db_version', ?)", ['1.0']);
     $data[0]['data'] = '1.0';
 }
 
@@ -33,6 +33,7 @@ primary key(`id`)
 `created` datetime DEFAULT CURRENT_TIMESTAMP,
 primary key(`id`)
 )";
+    $q['1.003'][] = "ALTER TABLE `search` ADD `search_site` varchar(255) default null AFTER `search_text`;";
 
     $actualVersion = $currentVersion;
     // убираем лишнеее
@@ -45,6 +46,6 @@ primary key(`id`)
         foreach($q as $ver => $data)
             foreach($data as $query) pdo_query($query);
 
-        pdo_query("update `settings` set `data` = ? where `id` = ?", [$actualVersion, 'cms_db_version']);
+        pdo_query("update `settings` set `data` = ? where `id` = ?", [$actualVersion, 'db_version']);
     }
 }

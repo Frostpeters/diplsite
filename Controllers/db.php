@@ -38,6 +38,9 @@ function pdo_query($query, $data = array())
     } catch (PDOException $e) {
         return array();
     }
+}
 
-
+function pdo_lastInsertId(){
+    global $db;
+    return $db->lastInsertId();
 }
