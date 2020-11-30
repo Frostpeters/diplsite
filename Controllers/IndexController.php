@@ -21,7 +21,7 @@ class Controllers_IndexController extends Controllers_Controller
             if (isset($_POST['fast_search']) && $_POST['fast_search']){
                 $limit = 500;
             }
-            $url = sprintf('scrapy crawl %s -a email="rak.genia97@gmail.com" -a pass="Sipota65141063" -a find="%s" -a search_id="%s" -a count="%s"',
+            $url = sprintf('scrapy crawl %s -a email="EMAIL" -a pass="PASSWODR" -a find="%s" -a search_id="%s" -a count="%s"',
                 $_POST['search_site'], $_POST['search_text'], $id, $limit);
 //            print_r($url);die;
             chdir(__DIR__ . '/../../spider/quotespider/quotespider');
