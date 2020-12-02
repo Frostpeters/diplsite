@@ -24,7 +24,8 @@ $smarty->setConfigDir('smarty/configs/');
 $smarty->setCacheDir('smarty/cache/');
 
 //database connect
-require_once __DIR__."/Controllers/db.php";
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . "/Controllers/helpers/db.php";
 require_once __DIR__."/config/migration.php";
 // Filter input
 $route = $config->defaultRoute;

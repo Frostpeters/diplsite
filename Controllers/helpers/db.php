@@ -7,8 +7,8 @@ $dsn = array(
     'hostspec' => 'localhost',
     'database' => '',
 );
-if (file_exists(__DIR__ . '/../config/db_local.php')) $dsn = include __DIR__ . '/../config/db_local.php';
-elseif (file_exists(__DIR__ . '/../config/db.php')) $dsn = include __DIR__ . '/../config/db.php';
+if (file_exists(__DIR__ . '/../../config/db_local.php')) $dsn = include __DIR__ . '/../../config/db_local.php';
+elseif (file_exists(__DIR__ . '/../../config/db.php')) $dsn = include __DIR__ . '/../../config/db.php';
 
 
 try {

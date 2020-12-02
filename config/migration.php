@@ -23,7 +23,7 @@ function migration_db_querys($currentVersion = 1){
 `text` varchar(255) default null,
 `processing_result` varchar(255) default null,
 `type_result` varchar(255) default null,
-`page` varchar(255) default null,
+`page` text default null,
 primary key(`id`)
 
 )ENGINE=MyISAM DEFAULT CHARSET=utf8";
@@ -34,6 +34,9 @@ primary key(`id`)
 primary key(`id`)
 )";
     $q['1.003'][] = "ALTER TABLE `search` ADD `search_site` varchar(255) default null AFTER `search_text`;";
+    $q['1.004'][] = "ALTER TABLE `results` ADD `lang` varchar(255) default null AFTER `type_result`;";
+    $q['1.005'][] = "ALTER TABLE `results` ADD `created` datetime DEFAULT CURRENT_TIMESTAMP AFTER `page`;";
+    $q['1.006'][] = "ALTER TABLE `results` ADD `comment_id` int(11) not null AFTER `search_id`;";
 
     $actualVersion = $currentVersion;
     // убираем лишнеее
