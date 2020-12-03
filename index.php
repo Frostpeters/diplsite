@@ -42,6 +42,7 @@ if (!empty($_GET['args']) && isset($_GET['args'])) {
     preg_match_all('/([^\/]+)\/([^\/]+)/', $_GET['args'], $arr);
     $args = array_combine($arr[1], $arr[2]);
 }
-
+global $app;
+$app->_detect_uri();
 $controller = Models_ControllerFactory::get($route, $action, $args, $smarty);
 $controller->display();

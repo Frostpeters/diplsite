@@ -1,71 +1,22 @@
 <main class="third">
     <div class="container">
         <div class="third__inner">
-            <div class="third__data-inner good">
+            <div class="third__data-inner {$type}">
                 <div class="result__data-title">
-                    Good results found: <span>5</span>
+                    {if $type == 'positive'}
+                        {$search_positive_result_const|default}
+                    {elseif $type == 'negative'}
+                        {$search_negative_result_const|default}
+                    {else}
+                        {$search_neutral_const|default}
+                    {/if}<span>{$comments|count}</span>
                 </div>
                 <ul class="third__list">
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
-                    <li class="result__list-item">
-                        <a href="#">Good</a>
-                    </li>
+                    {foreach from=$comments item=i name=foo}
+                        <li class="result__list-item">
+                            <a href="{$i.page}" target="_blank">{$i.text}</a>
+                        </li>
+                    {/foreach}
                 </ul>
             </div>
         </div>

@@ -29,8 +29,6 @@ $(document).on('submit', '.main__form', function () {
             url: window.location.href,
             data: $(this).serialize(),
             success: function (msg) {
-                return false;
-                msg = JSON.parse(msg)
                 location.href = '/result/?id=' + msg.return;
             },
             dataType: 'json'

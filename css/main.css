@@ -77,9 +77,11 @@ button { background-color: transparent; border: unset; }
 .result__for, .result .result__site, .result .result__not-correct { font: 400 16px/1 "Roboto", sans-serif; margin-bottom: 10px; text-align: center; }
 .result__not-correct { margin-bottom: 30px !important; }
 
-.good { box-shadow: 0px 1px 8px 0px #078C1C; }
+.good, .positive { box-shadow: 0px 1px 8px 0px #078C1C; }
 
-.bad { box-shadow: 0px 1px 8px 0px #8C0D00; }
+.bad, .negative { box-shadow: 0px 1px 8px 0px #8C0D00; }
+
+.bad, .neutral { box-shadow: 0px 1px 8px 0px #e6b115; }
 
 .third__inner { margin: 145px 0 40px; }
 .third__data-inner { border-radius: 10px; padding: 30px 50px; width: 100%; margin-right: 20px; }

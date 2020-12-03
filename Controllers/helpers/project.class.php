@@ -43,9 +43,7 @@ class project extends Controllers_Controller
                     pdo_query("INSERT INTO `results` (`search_id`, `comment_id`, `text`, `processing_result`, `type_result`, `lang`, `page`, `created`) VALUES(?,?,?,?,?,?,?,now())", [
                         $value['search_id'], $value['id'], json_encode($value['text']), json_encode($output), $type_result, $lang, $value['page']
                     ]);
-                    $output_text = $analyzer->getSentiment('very good');
                 }
-                die;
             }
         }
     }
