@@ -9,15 +9,9 @@ class project extends Controllers_Controller
     public function getTemplates($template_name = false)
     {
         global $smarty;
-        //header content
-        $smarty->assign('header_phone', '+380930519560');
-
-        //footer content
-        $smarty->assign('copyright', '<p>made by Genia Rak</p><p>CNUT %DATE%©</p>');
         if ($template_name) {
             $smarty->assign('block', $template_name . '.tpl');
         }
-
         return $this->_templateFile = 'index.tpl';
     }
 
@@ -46,6 +40,14 @@ class project extends Controllers_Controller
                 }
             }
         }
+    }
+
+    public function getLangFilter($id)
+    {
+        $langs = pdo_query("SELECT `lang`, count(*) AS total FROM `results` WHERE `search_id` = ? AND `lang` IS NOT NULl GROUP by `lang` 
+                    ORDER BY `lang` = 'ukrainian' desc, `lang` = 'russian' desc, `lang` = 'english' desc, `total` desc LIMIT 10", [$id]);
+        array_unshift($langs, ['lang' => 'all']);
+        return $langs;
     }
 
 }

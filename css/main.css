@@ -37,19 +37,21 @@ button { background-color: transparent; border: unset; }
 
 .container { max-width: 1170px; margin: 0 auto; padding: 0 15px; width: 100%; height: 100%; }
 
-.header { width: 100%; height: 80px; box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0; }
-.header__inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.header { width: 100%; height: 100px; box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0; position: fixed; background: #fff; z-index: 10000; top: 0; left: 0; }
+.header__inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
 .header__menu { display: flex; align-items: flex-end; justify-content: center; flex-direction: column; }
 .header__menu-list { display: flex; align-items: center; }
-.header__menu-phone { margin-bottom: 20px; }
+.header__menu-phone { margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-direction: row-reverse; }
+.header__menu-call:first-child { margin-left: 20px; }
 .header__menu-call a { color: #000; font: 400 16px/1 "Roboto", sans-serif; line-height: 18px; border-bottom: 2px solid transparent; }
 .header__menu-call a:hover { border-bottom: 2px solid #000; }
 .header__menu-item:not(:last-child) { margin-right: 20px; }
 .header__menu-item a { color: #000; font: 400 16px/1 "Roboto", sans-serif; line-height: 18px; transition: 0.4s; border-bottom: 2px solid transparent; }
 .header__menu-item a:hover { border-bottom: 2px solid #000; }
+.header__logo img { width: 85px; height: 61px; }
 
 .main { width: 100%; height: 100%; margin-top: 115px; }
-.main__inner { margin-bottom: 20px; }
+.main__inner { padding-bottom: 50px; }
 .main__form { box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0; border-radius: 10px; padding: 30px 50px; height: 541px; }
 .main__form-title { font: 700 40px/1 "Roboto", sans-serif; line-height: 45px; color: #000; text-align: center; margin-bottom: 40px; }
 .main__form-select { width: 100%; padding: 15px; font: 400 16px/1 "Roboto", sans-serif; color: #000; border-radius: 10px; border: 1px solid #eee; cursor: pointer; }
@@ -59,12 +61,21 @@ button { background-color: transparent; border: unset; }
 .main__form-checkbox input[type="checkbox"] { transform: scale(1.2); -ms-transform: scale(1.2); -webkit-transform: scale(1.2); cursor: pointer; }
 .main__form-input { width: 100%; border-radius: 10px; height: 198px; border: 1px solid #eee; resize: none; padding: 10px; font: 400 16px/1 "Roboto", sans-serif; color: #000; }
 .main__form-submit { cursor: pointer; padding: 10px 30px; line-height: 1; position: relative; border: 1px solid #617959; background: #617959; color: #fff; font: 400 20px/1 "Roboto", sans-serif; text-align: center; transition: 200ms all; text-transform: unset; margin: 20px auto; display: block; }
+.main__last { width: 100%; margin-top: 30px; }
+.main__last-list { display: flex; flex-direction: column; align-items: flex-start; width: 100%; box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0; border-radius: 10px; padding: 30px 50px; }
+.main__last-item { padding: 10px; width: 100%; }
+.main__last-item:hover .main__last-link { opacity: 0.8; }
+.main__last-item:last-child { padding-bottom: 0; }
+.main__last-item:first-child { padding-top: 0; }
+.main__last-link { transition: 0.4s; font: 400 16px/1 "Roboto", sans-serif; color: #000; }
+
+main { padding-top: 100px; }
 
 .footer { position: absolute; bottom: 0; width: 100%; height: 96px; border-top: 1px solid #f7f8fa; padding: 40px 0; background: #f7f8fa; }
 .footer__inner { display: flex; align-items: center; justify-content: space-between; }
 .footer__inenr p { font: 400 16px/1 "Roboto", sans-serif; color: #000; }
 
-.result__inner { display: block; margin-bottom: 50px; }
+.result__inner { display: block; padding-bottom: 50px; }
 .result__inner-title { font: 700 40px/1 "Roboto", sans-serif; line-height: 45px; color: #000; text-align: center; margin: 145px 0 40px; }
 .result__data { display: flex; justify-content: space-between; }
 .result__data-inner { box-shadow: rgba(99, 99, 99, 0.2) 0 1px 8px 0; border-radius: 10px; padding: 30px 50px; width: calc((100% - 20px) / 2); margin-right: 20px; }
@@ -75,15 +86,25 @@ button { background-color: transparent; border: unset; }
 .result__list-item:last-child { border: unset; padding-bottom: 0; }
 .result__list-item a { font: 400 16px/1 "Roboto", sans-serif; color: #000; }
 .result__for, .result .result__site, .result .result__not-correct { font: 400 16px/1 "Roboto", sans-serif; margin-bottom: 10px; text-align: center; }
-.result__not-correct { margin-bottom: 30px !important; }
+.result__not-correct { margin-bottom: 20px !important; }
+.result__language { margin-bottom: 30px !important; display: flex; align-items: center; justify-content: center; }
+.result__language-select { margin-left: 5px; min-width: 80px; padding: 8px 15px 5px 20px; font: 400 16px/1 "Roboto", sans-serif; color: #000; border-radius: 10px; border: 1px solid #eee; cursor: pointer; --select-border: #777; --select-focus: blue; --select-arrow: var(--select-border); }
 
-.good, .positive { box-shadow: 0px 1px 8px 0px #078C1C; }
+.good { box-shadow: 0px 1px 8px 0px #078C1C; }
 
-.bad, .negative { box-shadow: 0px 1px 8px 0px #8C0D00; }
+.bad { box-shadow: 0px 1px 8px 0px #8C0D00; }
 
-.bad, .neutral { box-shadow: 0px 1px 8px 0px #e6b115; }
-
-.third__inner { margin: 145px 0 40px; }
+.third__inner { margin: 145px 0 0; padding-bottom: 50px; }
 .third__data-inner { border-radius: 10px; padding: 30px 50px; width: 100%; margin-right: 20px; }
+
+.about strong { font-weight: 700; }
+.about__link { font-weight: 700; text-decoration: underline; color: #000; font-family: 400 20px/1 "Roboto", sans-serif; line-height: 24px; }
+.about__inner { margin: 100px 0 0; padding-bottom: 50px; }
+.about__title-h1 { font: 600 40px/1 "Roboto", sans-serif; color: #000; line-height: 42px; margin: 25px 0; text-align: center; }
+.about__title-h2 { font: 600 36px/1 "Roboto", sans-serif; color: #000; line-height: 38px; margin: 25px 0; text-align: center; }
+.about__description { font: 400 20px/1 "Roboto", sans-serif; line-height: 24px; color: #000; margin-bottom: 10px; letter-spacing: 1px; }
+.about__list { display: flex; flex-direction: column; align-items: flex-start; padding-left: 20px; }
+.about__list-item { font: 400 20px/1 "Roboto", sans-serif; color: #000; line-height: 24px; list-style: outside; margin-bottom: 10px; }
+.about__list-ol { font: 400 20px/1 "Roboto", sans-serif; color: #000; line-height: 24px; list-style: decimal; margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */

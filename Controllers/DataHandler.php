@@ -8,24 +8,25 @@ class Controllers_DataHandler extends Controllers_Controller
     protected function indexAction()
     {
         global $app, $smarty;
-        $smarty->assign('search_result_title', 'Результат пошуку');
-        $smarty->assign('search_by_const', 'Поиск произведен по: ');
-        $smarty->assign('search_on_site_const', 'На сайте: ');
-        $smarty->assign('search_neutral_const', 'Нейтральний результат: ');
-        $smarty->assign('search_choose_lang_const', 'Мовний фільтр: ');
-        $smarty->assign('search_positive_result_const', 'Good results found: ');
-        $smarty->assign('search_negative_result_const', 'Bad results found: ');
         if (isset($_GET['id']) && $_GET['id']) {
+            $langs = $app->project->getLangFilter($_GET['id']);
+            $smarty->assign('filter', $langs);
             $add = '';
-            if (isset($_GET['lang']) && $_GET['lang']){
+            if (isset($_GET['lang']) && $_GET['lang']) {
+                $save = false;
                 $lang = str_replace('/', '', $_GET['lang']);
-                if ($lang == 'ua'){
-                    $add = " AND `lang` = 'ukrainian' ";
-                }elseif ($lang == 'en'){
-                    $add = " AND `lang` = 'english' ";
-                }elseif ($lang == 'ru'){
-                    $add = " AND `lang` = 'russian' ";
+                foreach ($langs as $value) {
+                    if ($value['lang'] == $lang) {
+                        $save = true;
+                    }
                 }
+                if ($save) {
+                    $_SESSION['lang'] = $lang;
+                }
+                header('Location: /result?id=' . $_GET['id']);
+            }
+            if (isset($_SESSION['lang']) && $_SESSION['lang'] != 'all') {
+                $add = sprintf(" AND `lang` = '%s' ", $_SESSION['lang']);
             }
             $positive = [];
             $negative = [];

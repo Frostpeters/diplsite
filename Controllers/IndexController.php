@@ -8,11 +8,11 @@ class Controllers_IndexController extends Controllers_Controller
     protected function indexAction()
     {
         global $app, $smarty;
-        $smarty->assign('title', 'Select site');
-        $smarty->assign('button_search', 'Search');
-        $smarty->assign('quick_search', 'Quick Search');
         $sites = ['facebook' => 'facebook.com'];
         $smarty->assign('sites', $sites);
+
+        $last_search = pdo_query("SELECT * FROM `search` ORDER BY `created` DESC LIMIT 10");
+        $smarty->assign('last_search', $last_search);
 
         if (isset($_POST['action']) && $_POST['action'] == 'search') {
             pdo_query("INSERT INTO `search` (`search_text`, `created`, `search_site`) VALUES(?, now(), ?)", [$_POST['search_text'], $_POST['search_site']]);

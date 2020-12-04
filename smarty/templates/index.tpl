@@ -19,32 +19,39 @@
     <div class="container">
         <div class="header__inner">
             <div class="header__logo">
-                {if $header_logo|default:false}
-                    <img src="../img/prime-logo.png" alt="">
+                {if $const_header_logo|default:false}
+                    <a href="/">
+                        <img src="{$const_header_logo}" alt="">
+                    </a>
                 {/if}
             </div>
             <div class="header__menu">
-                {if $header_phone|default:false}
+                {if $const_header_phone|default:false}
                     <ul class="header__menu-phone">
                         <li class="header__menu-call">
-                            <a href="tel:{$header_phone}">{$header_phone}</a>
+                            <a href="tel:{$const_header_phone}">{$const_header_phone}</a>
                         </li>
+                        {if $filter|default:false}
+                            <li class="haeder__menu-call">
+                                {$const_header_language_filter|default:"Мовний фільтр"}
+                                <select class="result__language-select lang_filter">
+                                    {foreach from=$filter item=i}
+                                        <option value="{$i.lang}" class="result__language-option" {if $smarty.session.lang|default:false == $i.lang}selected{/if}>
+                                            <p>{$i.lang}</p>
+                                        </option>
+                                    {/foreach}
+                                </select>
+                            </li>
+                        {/if}
                     </ul>
                 {/if}
-                {if $header_menu_list|default:false}
+                {if $const_header_menu_list|default:false}
                     <ul class="header__menu-list">
-                        <li class="header__menu-item">
-                            <a href="#">test1</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">test2</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">test3</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">test4</a>
-                        </li>
+                        {foreach from=$const_header_menu_list item=i}
+                            <li class="header__menu-item {if $smarty.server.REQUEST_URI == $i.link}active{/if}">
+                                <a href="{$i.link}">{$i.title}</a>
+                            </li>
+                        {/foreach}
                     </ul>
                 {/if}
             </div>
@@ -55,7 +62,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            {$copyright|replace:"%DATE%":date('Y')}
+            {$const_f_copyright|replace:"%DATE%":date('Y')}
         </div>
     </div>
 </footer>

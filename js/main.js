@@ -36,3 +36,7 @@ $(document).on('submit', '.main__form', function () {
     }
     return false;
 });
+
+$(document).on('change', '.lang_filter', function () {
+    location.href = window.location.href + '&lang=' + $(this).val()
+});

@@ -1,3 +1,32 @@
 .error {
     border: 2px solid red;
 }
+
+.neutral {
+    box-shadow: 0px 1px 8px 0px #e6b115;
+}
+
+.positive {
+    box-shadow: 0px 1px 8px 0px #078C1C;
+}
+
+.negative {
+    box-shadow: 0px 1px 8px 0px #8C0D00;
+}
+
+.active {
+    border-bottom: 2px solid #000;
+}
+
+.last_search_title {
+    font: 700 30px/1 "Roboto", sans-serif;
+    line-height: 45px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.bold{
+    font-weight: bold;
+}

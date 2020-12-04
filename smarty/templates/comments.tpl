@@ -4,11 +4,11 @@
             <div class="third__data-inner {$type}">
                 <div class="result__data-title">
                     {if $type == 'positive'}
-                        {$search_positive_result_const|default}
+                        {$const_r_search_positive_result_const|default}
                     {elseif $type == 'negative'}
-                        {$search_negative_result_const|default}
+                        {$const_r_search_negative_result_const|default}
                     {else}
-                        {$search_neutral_const|default}
+                        {$const_r_search_neutral_const|default}
                     {/if}<span>{$comments|count}</span>
                 </div>
                 <ul class="third__list">
