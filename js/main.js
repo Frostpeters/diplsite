@@ -24,6 +24,8 @@ $(document).on('submit', '.main__form', function () {
         }
     }
     if (!error) {
+        $('.main__form-submit-div').show();
+        $('.main__form-submit-input').hide();
         $.ajax({
             type: "POST",
             url: window.location.href,

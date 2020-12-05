@@ -57,7 +57,7 @@ button { background-color: transparent; border: unset; }
 .main__form-select { width: 100%; padding: 15px; font: 400 16px/1 "Roboto", sans-serif; color: #000; border-radius: 10px; border: 1px solid #eee; cursor: pointer; }
 .main__form-select option { cursor: pointer; }
 .main__form-checkbox { display: flex; align-items: center; margin: 20px 0; width: 125px; cursor: pointer; }
-.main__form-checkbox-name { font: 400 16px/1 "Roboto", sans-serif; color: #000; margin-left: 10px; cursor: pointer; }
+.main__form-checkbox-name {min-width: 1000px; font: 400 16px/1 "Roboto", sans-serif; color: #000; margin-left: 10px; cursor: pointer; }
 .main__form-checkbox input[type="checkbox"] { transform: scale(1.2); -ms-transform: scale(1.2); -webkit-transform: scale(1.2); cursor: pointer; }
 .main__form-input { width: 100%; border-radius: 10px; height: 198px; border: 1px solid #eee; resize: none; padding: 10px; font: 400 16px/1 "Roboto", sans-serif; color: #000; }
 .main__form-submit { cursor: pointer; padding: 10px 30px; line-height: 1; position: relative; border: 1px solid #617959; background: #617959; color: #fff; font: 400 20px/1 "Roboto", sans-serif; text-align: center; transition: 200ms all; text-transform: unset; margin: 20px auto; display: block; }

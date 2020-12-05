@@ -27,6 +27,44 @@
     margin-top: 60px;
 }
 
-.bold{
+.bold {
     font-weight: bold;
+}
+
+.main__form-submit-div {
+    cursor: pointer;
+    padding: 15px 36px;
+    position: relative;
+    border: 1px solid #617959;
+    background: #617959;
+    color: #fff;
+    font: 400 20px/1 "Roboto", sans-serif;
+    text-align: center;
+    transition: 200ms all;
+    text-transform: unset;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block
+}
+
+.main__form-submit-input {
+    cursor: pointer;
+    padding: 10px 30px;
+    position: relative;
+    border: 1px solid #617959;
+    background: #617959;
+    color: #fff;
+    font: 400 20px/1 "Roboto", sans-serif;
+    text-align: center;
+    transition: 200ms all;
+    text-transform: unset;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block
+}
+
+.main__div-submit {
+    box-sizing: border-box;display: flex;
+    align-items: center;
+    justify-content: center;
 }

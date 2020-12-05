@@ -20,7 +20,11 @@
                            class="main__form-checkbox-name">{$const_i_quick_search|default:"Quick Search"}</label>
                 </div>
                 <textarea type="text" class="main__form-input required" name="search_text"></textarea>
-                <input type="submit" class="main__form-submit" value="{$const_i_button_search|default:"Search"}">
+                <div class="main__div-submit ">
+                    <input type="submit" class="main__form-submit-input" style="display: inline-block"
+                           value="{$const_i_button_search|default:"Search"}">
+                    <img style="display:none;" class="main__form-submit-div" src="/../../media/img/loading.gif" alt="">
+                </div>
             </form>
 
             {if $last_search|default:false}
